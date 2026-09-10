@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Solitiare Collections</h1>
+    <p id="userLevel"></p>
+    <script>
+  function startGame(page) {
+    window.location.href = page;
+  }
+</script>
+
+<div> 
+  <button class="buttonn" onclick="startGame('/index')">Play Solitaire</button>
+  <button class="buttonn" onclick="startGame('/play/hunt')">Play Hunt the Ace</button>
+</div>
+  </div>
+
+  <script>
+    const name = localStorage.getItem('name');
+    const level = localStorage.getItem('level');
+
+    document.getElementById('greeting').textContent = `Hello, ${name}!`;
+    document.getElementById('userLevel').textContent = `Level: ${level}`;
+
+    function startGame(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>
